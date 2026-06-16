@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>RSVP Management - Community Event Manager</title>
+  <link rel="stylesheet" href="css/rsvp.css" />
+</head>
+<body>
+  <div class="rsvp-container">
+    <header>
+      <h1>RSVP Management</h1>
+      <a href="dashboard.html" class="back-btn">← Dashboard</a>
+    </header>
+
+    <section class="event-rsvp">
+      <h2>Community Hackathon</h2>
+      <p><strong>Date:</strong> 2025-06-10</p>
+      <p><strong>Location:</strong> Community Hall</p>
+      
+      <div class="rsvp-status">
+        <h3>Your RSVP Status:</h3>
+        <button class="rsvp-action attending">Going</button>
+        <button class="rsvp-action not-going">Not Going</button>
+      </div>
+    </section>
+
+    <section class="attendees-list">
+      <h3>Attendees</h3>
+      <ul>
+        <li>John Doe</li>
+        <li>Jane Smith</li>
+        <li>Mark Lee</li>
+        <!-- Dynamically populated by backend -->
+      </ul>
+    </section>
+  </div>
+</body>
+</html>
