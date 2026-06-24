@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Register - Community Event Manager</title>
+  <link rel="stylesheet" href="css/register.css" />
+</head>
+<body>
+  <div class="register-container">
+    <div class="register-card">
+      <h2>Create Account</h2>
+      <form action="/modules/auth/register.php" method="POST">
+        <label for="name">Full Name</label>
+        <input type="text" name="name" required />
+
+        <label for="email">Email</label>
+        <input type="email" name="email" required />
+
+        <label for="password">Password</label>
+        <input type="password" name="password" required />
+
+        <label for="community">Community Name</label>
+        <input type="text" name="community" required />
+
+        <label for="role">Register As</label>
+        <select name="role" required>
+          <option value="member">Member</option>
+          <option value="organizer">Organizer</option>
+        </select>
+
+        <button type="submit">Register</button>
+      </form>
+      <p>Already have an account? <a href="login.html">Login</a></p>
+    </div>
+  </div>
+  <script>
+  const registerForm = document.querySelector('.register-form');
+
+  registerForm.addEventListener('submit', async (e) => {
+    e.preventDefault();
+
+    const username = registerForm.username.value.trim();
+    const email = registerForm.email.value.trim();
+    const password = registerForm.password.value;
+    const community_id = 1; // For demo, you can change or get this dynamically
+
+    const payload = { username, email, password, community_id };
+
+    try {
+      const res = await fetch('/modules/auth/register.php', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload)
+      });
+
+      const data = await res.json();
+
+      if (res.ok) {
+        alert(data.success);
+        window.location.href = 'login.html'; // Redirect to login after success
+      } else {
+        alert(data.error || 'Registration failed');
+      }
+    } catch (err) {
+      alert('Network error');
+      console.error(err);
+    }
+  });
+</script>
+
+</body>
+</html>

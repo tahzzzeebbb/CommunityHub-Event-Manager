@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Dashboard - Community Event Manager</title>
+  <link rel="stylesheet" href="css/dashboard.css" />
+</head>
+<body>
+  <div class="dashboard-container">
+    <header>
+      <h1>Welcome, <span class="username">John Doe</span></h1>
+      <p class="community">Community: <strong>Tech Enthusiasts</strong></p>
+      <a href="logout.php" class="logout-btn">Logout</a>
+    </header>
+
+    <section class="cards">
+      <div class="card">
+        <h3>Total Events</h3>
+        <p>12</p>
+      </div>
+      <div class="card">
+        <h3>Upcoming Events</h3>
+        <p>3</p>
+      </div>
+      <div class="card">
+        <h3>Total RSVPs</h3>
+        <p>86</p>
+      </div>
+    </section>
+
+    <section class="actions">
+      <button onclick="location.href='create-event.html'">Create Event</button>
+      <button onclick="location.href='events.html'">View Events</button>
+    </section>
+  </div>
+</body>
+</html>
